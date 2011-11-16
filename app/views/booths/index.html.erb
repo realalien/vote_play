@@ -1,0 +1,29 @@
+<h1>Listing booths</h1>
+
+<table>
+  <tr>
+    <th>District</th>
+    <th>Booth station no</th>
+    <th>Booth no</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @booths.each do |booth| %>
+  <tr>
+    <td><%= booth.district %></td>
+    <td><%= booth.booth_station_no %></td>
+    <td><%= booth.booth_no %></td>
+    <td><%= booth.description %></td>
+    <td><%= link_to 'Show', booth %></td>
+    <td><%= link_to 'Edit', edit_booth_path(booth) %></td>
+    <td><%= link_to 'Destroy', booth, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booth', new_booth_path %>

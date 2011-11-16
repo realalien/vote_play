@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>District:</b>
+  <%= @booth.district %>
+</p>
+
+<p>
+  <b>Booth station no:</b>
+  <%= @booth.booth_station_no %>
+</p>
+
+<p>
+  <b>Booth no:</b>
+  <%= @booth.booth_no %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @booth.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_booth_path(@booth) %> |
+<%= link_to 'Back', booths_path %>

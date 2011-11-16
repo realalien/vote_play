@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  role: MyString
+  inaugurated_on: 2011-11-16
+  ceased_on: 2011-11-16
+  organization_id: 1
+  person_id: 1
+
+two:
+  role: MyString
+  inaugurated_on: 2011-11-16
+  ceased_on: 2011-11-16
+  organization_id: 1
+  person_id: 1

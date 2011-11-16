@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  district: MyString
+  booth_station_no: 
+  booth_no: 
+  description: MyString
+
+two:
+  district: MyString
+  booth_station_no: 
+  booth_no: 
+  description: MyString
