@@ -31,6 +31,15 @@
     <%= f.label :family_origin %><br />
     <%= f.text_field :family_origin %>
   </div>
+  
+  <div>
+  	<%= f.fields_for :organization_persons do | role_form | %>	
+		<%=role_form.label "Work as (role)" %>  :  <%= role_form.text_field :role %>
+		<%=role_form.label "Work in (organization)" %>  :  <%= role_form.select :organization_id, Organization.all.collect{|p| [p.name, p.id ]}, { :include_blank => true }  %>	<br/><br/>
+	<% end %>
+  </div>
+  
+  <div>TODO: allow admin to be able to add an organization from this link? Or must go through other links?</div>
   <div class="actions">
     <%= f.submit %>
   </div>

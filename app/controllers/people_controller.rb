@@ -25,7 +25,9 @@ class PeopleController < ApplicationController
   # GET /people/new.json
   def new
     @person = Person.new
-    @organizations =  Organization.find_all
+    # @person.organization_persons.build.build_organization   # this will create a new organization
+    3.times { @person.organization_persons.build }
+    # @organizations = Organization.find :all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @person }

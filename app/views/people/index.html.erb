@@ -7,10 +7,12 @@
     <th>Birthday</th>
     <th>Bio</th>
     <th>Family origin</th>
+	<th>Roles</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+
 
 <% @people.each do |person| %>
   <tr>
@@ -19,6 +21,21 @@
     <td><%= person.birthday %></td>
     <td><%= person.bio %></td>
     <td><%= person.family_origin %></td>
+	
+	<td>
+		<% if person.organization_persons.size > 0 %>
+		<dl>
+			<% person.organization_persons.each do | rel | %>
+				<li> <%= rel.role %>  in:  
+					<% if rel.organization.respond_to?(:name) %><%= rel.organization.name %>  <% end %> 
+				</li>
+			<% end %>
+		</dl>
+		<% else %>
+			No role assigned.
+		<% end %>
+	</td>
+	
     <td><%= link_to 'Show', person %></td>
     <td><%= link_to 'Edit', edit_person_path(person) %></td>
     <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
